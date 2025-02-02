@@ -1,4 +1,5 @@
 function solution(a, b) {
-    const answer = 2*a*b >= `${a}`+`${b}` ? 2*a*b : Number(`${a}`+`${b}`);
-    return answer;
+    const num1 = parseInt(a+""+b);
+    const num2 = 2 * a * b;
+    return num1 >= num2 ? num1 : num2;
 }
