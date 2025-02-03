@@ -1,10 +1,8 @@
 function solution(t, p) {
     let count = 0;
-    let lastIndex = p.length;
-    for (let i = 0; i < t.length; i++) {
-        const target = t.slice(i, lastIndex);
-        +target <= +p && target.length === p.length ? count += 1 : count += 0;
-        lastIndex += 1;
+    for (let i = 0; i <= t.length-p.length; i++) {
+        const target = t.slice(i, p.length + i);
+        if (+target <= +p) count++;
     }
     return count;
 }
