@@ -1,10 +1,10 @@
 function solution(sizes) {
-    const sortedSizes = sizes.map(size => size.sort((a,b) => b - a));
-    let widthMax = 0;
-    let heightMax = 0;
-    sortedSizes.forEach(size => {
-        widthMax < size[0] ? widthMax = size[0] : widthMax = widthMax;
-        heightMax < size[1] ? heightMax = size[1] : heightMax = heightMax;
+    const sortedSizes = sizes.map(([w, h]) => w > h ? [w, h] : [h, w])
+    
+    let [maxW, maxH] = [0, 0]
+    sortedSizes.forEach(([w, h]) => {
+        if (maxW < w) maxW = w;
+        if (maxH < h) maxH = h;
     })
-    return widthMax * heightMax;
+    return maxW * maxH;
 }
