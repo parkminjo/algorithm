@@ -1,7 +1,5 @@
 function solution(strs, parts) {
-    let result = "";
-    strs.forEach((str, idx) => {
-        result += str.slice(parts[idx][0], parts[idx][1]+1);
-    })
-    return result;
+    return parts.map(([num1, num2], idx) => {
+        return strs[idx].slice(num1, num2+1);
+    }).join("");
 }
