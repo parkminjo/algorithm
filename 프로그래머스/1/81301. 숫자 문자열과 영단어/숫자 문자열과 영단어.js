@@ -6,6 +6,6 @@ function solution(s) {
         s = s.replaceAll(word, index);
     });
 
-    return parseInt(s);
+    return Number(s);
 }
 
