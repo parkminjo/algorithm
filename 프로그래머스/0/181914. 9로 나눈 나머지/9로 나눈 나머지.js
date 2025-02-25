@@ -1,3 +1,3 @@
 function solution(number) {
-    return [...number].reduce((a, c) => +a + +c) % 9;
+    return number.split("").reduce((a, c) => +a + +c) % 9;
 }
