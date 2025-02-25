@@ -1,9 +1,10 @@
 function solution(food) {
-    const arr = [];
+    let left = "";
     food.forEach((f, idx) => {
         if (f > 1) {
-            arr.push(idx.toString().repeat(Math.floor(f / 2)))
+            const half = Math.floor(f / 2)
+            left += idx.toString().repeat(half);
         }
     });
-    return arr.join("") + "0" + arr.reverse().join("")
+    return left + "0" + left.split("").reverse().join("")
 }
