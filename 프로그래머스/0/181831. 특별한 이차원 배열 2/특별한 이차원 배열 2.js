@@ -1,10 +1,11 @@
 function solution(arr) {
-    const booleanArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {    
-            const boolean = arr[i][j] === arr[j][i]
-            booleanArr.push(boolean)
+    const size = arr.length;
+
+    for(let i = 0; i < size; i++) {
+        for(let j = i + 1; j < size; j++) {
+            if(arr[i][j] !== arr[j][i]) return 0;
         }
     }
-    return booleanArr.some(item => item === false) ? 0 : 1
+
+    return 1;
 }
