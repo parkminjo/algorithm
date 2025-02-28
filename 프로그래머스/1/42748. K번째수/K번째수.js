@@ -1,8 +1,5 @@
-function solution(arr, commands) {
-    const answer = [];
-    commands.forEach(([a, b, c]) => {
-        const result = arr.slice(a - 1, b).sort((a, b) => a - b)[c - 1];
-        answer.push(result);
-    })
-    return answer
+function solution(array, commands) {
+    return commands.map(([num1, num2, num3]) => {
+        return array.slice(num1 - 1, num2).sort((a, b) => a - b).slice(num3 - 1, num3)[0];
+    });
 }
