@@ -1,9 +1,9 @@
 function solution(k, m, score) {
-    const sortedScore = score.sort((a, b) => b - a).filter(score => 1 <= score && score <= k)
+    score.sort((a, b) => b - a);
     const newArr = [];
     
     for (let i = 0; i < score.length; i += m) {
-        const slicedApple = sortedScore.slice(i, i + m);
+        const slicedApple = score.slice(i, i + m);
         if (slicedApple.length === m) {
             newArr.push(Math.min(...slicedApple) * m);
         } else {
