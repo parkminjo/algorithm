@@ -1,3 +1,8 @@
 function solution(num_list) {
-    return num_list.reverse();
+    const reverseArr = [];
+    
+    for (let i = 1; i <= num_list.length; i++) {
+        reverseArr.push(num_list[num_list.length - i]);
+    }
+    return reverseArr;
 }
