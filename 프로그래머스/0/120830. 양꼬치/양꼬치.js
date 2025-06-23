@@ -1,10 +1,5 @@
 function solution(n, k) {
-  let answer = 12000 * n + 2000 * k
+  const answer = 12000 * n + 2000 * k - parseInt(n / 10) * 2000;
   
-  if (n >= 10) {
-      const count = Math.floor(n / 10);
-      answer = answer - 2000 * count;
-  }
-  
-  return answer
+  return answer;
 }
