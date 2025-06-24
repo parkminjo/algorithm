@@ -1,4 +1,4 @@
 function solution(sides) {
-    sides.sort((a,b) => a - b);
-    return sides[2] < sides[0] + sides[1] ? 1 : 2
+    sides.sort((a, b) => b - a);
+    return sides[0] < sides[1] + sides[2] ? 1 : 2;
 }
