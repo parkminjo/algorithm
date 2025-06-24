@@ -1,7 +1,8 @@
 function solution(str, k) {
-    let newStr = "";
-    for(let i=0; i < k; i++) {
-        newStr += str;
+    let arr = [];
+    for (let i = 0; i < k; i++) {
+        arr.push(str);
     }
-    return newStr;
+    
+    return arr.join("")
 }
