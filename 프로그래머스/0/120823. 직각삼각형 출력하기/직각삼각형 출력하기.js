@@ -9,9 +9,7 @@ let input = [];
 rl.on('line', function (line) {
     input = line.split(' ');
 }).on('close', function () {
-    const arr = [];
-    for (let i = 0; i < input[0]; i++) {
-        arr.push('*')
-        console.log(arr.join(''))
+    for (let i = 1; i <= input[0]; i++) {
+        console.log('*'.repeat(i));
     }
 });
