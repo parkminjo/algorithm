@@ -1,3 +1,3 @@
 function solution(str) {
-    return [...str].filter(item => !isNaN(Number(item))).reduce((acc, cur) => acc + Number(cur), 0);
+    return [...str].reduce((acc, cur) => Number(cur) ? acc + Number(cur) : acc, 0)
 }
