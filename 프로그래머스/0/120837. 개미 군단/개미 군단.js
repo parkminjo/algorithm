@@ -1,16 +1,3 @@
 function solution(hp) {
-    const warlord = 5;
-    const soldier = 3;
-    const ergate = 1;
-    
-    let sum = Math.floor(hp / warlord);
-    if (hp % warlord !== 0) {
-        sum += Math.floor(hp % warlord / soldier);
-        
-        if (hp % warlord % soldier !== 0) {
-            sum += hp % warlord % soldier
-        }
-    }
-    
-    return sum;
+     return Math.floor(hp / 5) + Math.floor((hp % 5 ) / 3) + (hp % 5 ) % 3;
 }
