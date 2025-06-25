@@ -1,6 +1,6 @@
 function solution(numbers) {
-    const [max1, max2] = numbers.sort((a, b) => b - a);
-    const [max3, max4] = numbers.sort((a, b) => a - b);
+    const lastIdx = numbers.length - 1;
+    const [max1, max2] = numbers.sort((a, b) => b - a)
     
-    return max1 * max2 >= max3 * max4 ? max1 * max2 : max3 * max4;
+    return max1 * max2 >= numbers[lastIdx - 1] * numbers[lastIdx] ? max1 * max2 : numbers[lastIdx - 1] * numbers[lastIdx];
 }
