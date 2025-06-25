@@ -1,13 +1,3 @@
 function solution(str) {
-    return [...str].map(char => {
-        if (isUpperCase(char)) {
-            return char.toLowerCase();
-        } else {
-            return char.toUpperCase();
-        }
-    }).join('');
+    return [...str].map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()).join('');
 }
-
-function isUpperCase(char) {
-  return char === char.toUpperCase() && char !== char.toLowerCase();
-};
