@@ -1,8 +1,10 @@
 function solution(numbers, n) {
-    let sum = 0;
-    numbers.forEach(num => {
-        if (sum > n) return sum;
-        sum += num;
+    return numbers.reduce((acc, cur) => {
+        if (acc <= n) {
+            console.log(acc);
+            return acc += cur;
+        } else {
+            return acc;
+        }
     })
-    return sum;
 }
