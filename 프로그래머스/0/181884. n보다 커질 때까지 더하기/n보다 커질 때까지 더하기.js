@@ -1,10 +1,8 @@
 function solution(numbers, n) {
-    return numbers.reduce((acc, cur) => {
-        if (acc <= n) {
-            console.log(acc);
-            return acc += cur;
-        } else {
-            return acc;
-        }
-    })
+    var answer = 0;
+    let i = 0;
+    while(answer <= n) {
+        answer += numbers[i++]
+    }
+    return answer;
 }
