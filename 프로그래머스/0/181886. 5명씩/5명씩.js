@@ -1,7 +1,9 @@
 function solution(names) {
-    let firstPerson = [];
-    for (let i = 0; i < names.length; i+=5) {
-        firstPerson.push(names[i]);
+    let answer = [];
+    let limitCount = 5;
+    
+    for (let i = 0; i < names.length; i+= limitCount) {
+        answer.push(names[i]);
     }
-    return firstPerson;
+    return answer;
 }
