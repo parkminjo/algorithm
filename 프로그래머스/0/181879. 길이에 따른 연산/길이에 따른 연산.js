@@ -1,7 +1,3 @@
 function solution(numList) {
-    if (numList.length >= 11) {
-        return numList.reduce((acc, cur) => acc + cur);
-    } else {
-        return numList.reduce((acc, cur) => acc * cur);
-    }   
+    return numList.reduce((acc, cur) => numList.length > 10 ? acc + cur : acc * cur);
 }
