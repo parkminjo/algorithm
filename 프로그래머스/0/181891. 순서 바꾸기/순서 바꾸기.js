@@ -1,3 +1,4 @@
-function solution(numList, n) { 
-    return [...numList.slice(n), ...numList.slice(0, n)]
+function solution(numList, n) {
+    numList.push(...numList.splice(0, n));
+    return numList
 }
