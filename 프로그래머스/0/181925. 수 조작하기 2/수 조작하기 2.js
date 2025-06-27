@@ -1,26 +1,9 @@
 function solution(numLog) {
-    const w = 1;
-    const s = -1;
-    const d = 10;
-    const a = -10;
-    
-    const arr = [];
-    
-    for (let i = 0; i < numLog.length; i++) {
-        switch (numLog[i + 1] - numLog[i]) {
-            case w:
-                arr.push('w');
-                break;
-            case s:
-                arr.push('s');
-                break;
-            case d:
-                arr.push('d');
-                break;
-            case a:
-                arr.push('a');
-                break;
-        }
+    const convert = {
+        1: 'w', '-1': 's', 10: 'd', '-10': 'a'
     }
-    return arr.join('');
+    
+    return numLog.slice(1).map(((num, idx) => {
+        return convert[num - numLog[idx]]
+    })).join('')
 }
