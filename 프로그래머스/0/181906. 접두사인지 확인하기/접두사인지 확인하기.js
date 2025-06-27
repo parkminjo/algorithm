@@ -1,3 +1,3 @@
-function solution(str, prefix) {
-    return str.slice(0, prefix.length) === prefix ? 1 : 0;    
+function solution(str, isPrefix) {
+    return str.slice(0, isPrefix.length) === isPrefix ? 1 : 0
 }
