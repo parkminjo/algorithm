@@ -1,15 +1,8 @@
-function solution(n) {
-    const arr = [n];
+function solution(n, arr = []) {
+    arr.push(n)
     
-    while (n > 1) {
-        if (n % 2 === 0) {
-            arr.push(n / 2);
-            n = n / 2;
-        } else {
-            arr.push(3 * n + 1);
-            n = 3 * n + 1
-        }
-    }
+    if (n === 1) return arr
+    if (n % 2 === 0) return solution(n / 2, arr)
     
-    return arr;
+    return solution(3 * n + 1, arr)
 }
