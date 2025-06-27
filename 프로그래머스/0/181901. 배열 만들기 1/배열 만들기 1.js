@@ -1,7 +1,10 @@
 function solution(n, k) {
-    let resultArr = [];
-    for(let i = 1; i <= n; i++) {
-        k * i <= n && resultArr.push(k*i);
+    const arr = [];
+    
+    for (let i = 1; i <= n; i++) {
+        if (i % k === 0) {
+            arr.push(i);
+        }
     }
-    return resultArr;
+    return arr;
 }
