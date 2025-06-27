@@ -1,3 +1,3 @@
 function solution(str, isPrefix) {
-    return str.slice(0, isPrefix.length) === isPrefix ? 1 : 0
+    return str.startsWith(isPrefix) ? 1 : 0;
 }
