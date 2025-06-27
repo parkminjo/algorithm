@@ -1,3 +1,1 @@
-function solution(number) {
-    return [...number].reduce((acc, cur) => acc + Number(cur), 0) % 9;
-}
+const solution= n => BigInt(n) % 9n
