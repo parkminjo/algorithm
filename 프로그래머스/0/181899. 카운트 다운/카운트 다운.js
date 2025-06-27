@@ -1,3 +1,8 @@
-function solution(start, end) {
-    return Array(start-end + 1).fill(start).map((num, idx) => num - idx);
+function solution(startNum, endNum) {
+    const arr = [];
+    
+    for (let i = startNum; i >= endNum; i--) {
+        arr.push(i)
+    }
+    return arr;
 }
