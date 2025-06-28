@@ -1,4 +1,3 @@
 function solution(flo) {
-    const answer = Math.floor(flo);
-    return answer;
+    return Math.floor(flo);
 }
