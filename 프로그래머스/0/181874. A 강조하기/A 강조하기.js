@@ -1,4 +1,5 @@
-function solution(myString) {
-    const answer = myString.toLowerCase().replaceAll("a", "A");
-    return answer;
+function solution(str) {
+    return [...str].map(char => {
+        return char === 'a' || char === 'A' ? 'A' : char.toLowerCase();
+    }).join('');
 }
