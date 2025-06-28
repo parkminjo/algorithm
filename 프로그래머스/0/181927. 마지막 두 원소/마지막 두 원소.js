@@ -1,7 +1,9 @@
 function solution(numList) {
-    const lastIdx = numList.length - 1;
-    const lastNum = numList[lastIdx]
-    const beforeNum = numList[lastIdx - 1]
-    lastNum > beforeNum ? numList.push(lastNum - beforeNum) : numList.push(lastNum*2);
-    return numList;
+    const prevElement = numList[numList.length - 2];
+    const lastElement = numList[numList.length - 1];
+    
+    lastElement > prevElement ? numList.push(lastElement - prevElement) : 
+    numList.push(lastElement * 2);
+    
+    return numList
 }
