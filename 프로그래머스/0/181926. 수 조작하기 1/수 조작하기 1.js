@@ -1,8 +1,16 @@
 function solution(n, control) {
-    return [ n, ...control].reduce((acc, cur) => {
-        if (cur === "w") return acc + 1
-        if (cur === "s") return acc - 1
-        if (cur === "d") return acc + 10
-        if (cur === "a") return acc - 10
-    })
+    const WASD = {
+        w: 1,
+        s: -1,
+        d: 10,
+        a: -10
+    }
+    
+    let answer = n;
+    
+    for (let i = 0; i < control.length; i++) {
+        answer += WASD[control[i]]
+    }
+    
+    return answer;
 }
