@@ -1,9 +1,4 @@
 function solution(numList) {
-    const prevElement = numList[numList.length - 2];
-    const lastElement = numList[numList.length - 1];
-    
-    lastElement > prevElement ? numList.push(lastElement - prevElement) : 
-    numList.push(lastElement * 2);
-    
-    return numList
+    const [a, b] = [...numList].reverse();
+    return [...numList, a > b ? a - b : a * 2];
 }
