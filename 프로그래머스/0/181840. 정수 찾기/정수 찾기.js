@@ -1,3 +1,3 @@
 function solution(numList, n) {
-    return numList.includes(n) ? 1: 0;
+    return numList.includes(n) ? 1 : 0;
 }
