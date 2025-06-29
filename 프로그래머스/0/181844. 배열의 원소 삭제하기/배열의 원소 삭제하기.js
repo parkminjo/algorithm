@@ -1,3 +1,3 @@
 function solution(arr, deleteList) {
-    return arr.filter(item => !deleteList.includes(item))
+    return arr.filter(num => !deleteList.includes(num));
 }
