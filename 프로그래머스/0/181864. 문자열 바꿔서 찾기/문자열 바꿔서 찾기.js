@@ -1,7 +1,3 @@
-function solution(myStr, pat) {
-    let newStr = ""
-    for(let i=0; i<myStr.length; i++) {
-        myStr[i] === "A" ? newStr += "B" : newStr += "A";
-    }
-    return newStr.includes(pat) ? 1 : 0;
+function solution(str, pat) {
+    return [...str].map(char => char === 'A' ? 'B' : 'A').join('').includes(pat) ? 1 : 0;
 }
