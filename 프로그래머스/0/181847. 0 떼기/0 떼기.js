@@ -1,1 +1,3 @@
-const solution = (str) => String(Number(str))
+function solution(numStr) {
+    return String(parseInt(numStr));
+}
