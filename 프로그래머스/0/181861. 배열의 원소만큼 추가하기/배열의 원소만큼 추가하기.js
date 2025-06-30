@@ -1,9 +1,3 @@
-function solution(arr) {
-    const answer = [];
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i]; j++) {
-            answer.push(arr[i])
-        }
-    }
-    return answer;
+function solution (arr) {
+    return arr.map(num => Array(num).fill(num)).flat();
 }
