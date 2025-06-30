@@ -1,3 +1,3 @@
 function solution(str) {
-    return str.split("x").map(char => char.length);
+    return str.split('x').map(str => str.length);
 }
