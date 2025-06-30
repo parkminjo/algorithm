@@ -1,9 +1,9 @@
 function solution(arr) {
-    let x = [];
-    arr.forEach(a => {
-        for (let i = 0; i < a; i++) {
-            x.push(a);
+    const answer = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i]; j++) {
+            answer.push(arr[i])
         }
-    })
-    return x;
+    }
+    return answer;
 }
