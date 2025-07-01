@@ -1,4 +1,7 @@
-function solution(num_list, n) {
-    const answer = num_list.filter((_, idx) => idx % n === 0);
-    return answer;
+function solution(numList, n) {
+    const arr = [];
+    for (let i = 0; i < numList.length; i += n) {
+        arr.push(numList[i]);
+    }
+    return arr;
 }
