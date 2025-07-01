@@ -1,13 +1,6 @@
 function solution(n) {
-    const arr = [];
-    for (let i = 1; i <= n; i++) {
-        if (n % 2 === 0 && i % 2 === 0) {
-            console.log(i);
-            arr.push(i ** 2)
-        } else if (n % 2 !== 0 && i % 2 !== 0) {
-            arr.push(i);
-        }
-    }
-    
-    return arr.reduce((acc, cur) => acc + cur);
+    if(n % 2 === 1)
+      return  (n + 1) / 2 *((n + 1) / 2) ;
+    else
+      return  n * (n + 1) * (n + 2) / 6;
 }
