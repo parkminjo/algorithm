@@ -1,3 +1,3 @@
-function solution(num_list, n) {
-    return num_list.slice(n-1);
+function solution(numList, n) {
+    return numList.slice(n - 1);
 }
