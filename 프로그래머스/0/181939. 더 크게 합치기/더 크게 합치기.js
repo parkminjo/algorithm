@@ -1,6 +1,7 @@
 function solution(a, b) {
-    const x = a + "" + b;
-    const y = b + "" + a;
-    const answer = x >= y ? x : y;
-    return Number(answer);
+    return combineStr(a, b) >= combineStr(b, a) ? combineStr(a, b) : combineStr(b, a);
+}
+
+function combineStr (x, y) {
+    return Number(String(x) + String(y));
 }
