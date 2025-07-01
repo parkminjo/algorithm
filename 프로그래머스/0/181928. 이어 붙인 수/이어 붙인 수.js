@@ -1,8 +1,7 @@
-function solution(num_list) {
-    let odd = ""
-    let even = ""
-    num_list.forEach(num => {
-        num % 2 === 0 ? odd += num : even += num;
-    })
-    return +odd + +even;
+function solution(numList) {
+    const even = numList.filter(num => num % 2 === 0).join('');
+    const odd = numList.filter(num => num % 2 !== 0).join('');
+    
+    const answer = +even + +odd;
+    return answer;
 }
