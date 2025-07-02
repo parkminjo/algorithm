@@ -1,7 +1,3 @@
 function solution(str, m, c) {
-    let answer = '';
-    for (let i = 0; i < str.length; i += m) {
-        answer += str.slice(i, i + m)[c - 1];
-    }
-    return answer;
+    return [...str].filter((_, idx) => idx % m === c - 1).join('');
 }
