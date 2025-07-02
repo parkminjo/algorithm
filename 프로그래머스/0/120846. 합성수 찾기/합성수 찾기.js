@@ -1,20 +1,9 @@
 function solution(n) {
-    let answer = 0;
-    for (let i = 1; i <= n; i++) {
-        if (getDivisorCount(i) >= 3) {
-            answer++;
-        }
-    }
-    return answer;
-}
-
-function getDivisorCount(num) {
-    let count = 0;
+    let baseArr = Array.from(Array(n), (v, i) => i + 1);
     
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0) {
-            count++;
-        }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        baseArr = baseArr.filter(num => num % i !== 0 || num <= i)
     }
-    return count;
+    
+    return n - baseArr.length;
 }
