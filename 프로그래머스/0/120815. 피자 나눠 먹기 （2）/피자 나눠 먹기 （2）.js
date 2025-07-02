@@ -1,11 +1,11 @@
 function solution(n) {
-    let i = 1;
+    let i = 6;
     
     while (true) {
         if ((i % 6 === 0) && (i % n === 0)) {
             break
         }
-        i++;
+        i += 6;
     }
     return i / 6;
 }
