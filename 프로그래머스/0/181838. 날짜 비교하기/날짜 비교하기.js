@@ -1,13 +1,15 @@
 function solution(date1, date2) {
-    let answer = 0;
-    for (let i = 0; i < date1.length; i++) {
-        if (date1[i] < date2[i]) {
-            return 1
-        } else if (date1[i] > date2[i]) {
-            return 0;
-        } else {
-            answer = 0;
-        }
-    }
-    return answer;
+    const [year1, month1, day1] = date1;
+    const [year2, month2, day2] = date2;
+    
+    if (year1 < year2) return 1;
+    if (year1 > year2) return 0;
+    
+    if (month1 < month2) return 1;
+    if (month1 > month2) return 0;
+    
+    if (day1 < day2) return 1;
+    if (day1 > day2) return 0;
+    
+    return 0;
 }
