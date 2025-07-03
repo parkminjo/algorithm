@@ -1,3 +1,3 @@
 function solution(str, indices) {
-    return str.split("").filter((s, i) => !indices.includes(i)).join("");
+    return [...str].filter((_, idx) => !indices.includes(idx)).join('');
 }
