@@ -1,13 +1,14 @@
 function solution(arr, flag) {
     const answer = [];
     
-    arr.forEach((num, i) => {
-        if (flag[i]) {
-            for (let i = 0; i < num * 2; i++) {
-                answer.push(num);
+    flag.forEach((bool, idx) => {
+        if (bool) {
+            for (let i = 1; i <= arr[idx] * 2; i++) {
+                answer.push(arr[idx]);
             }
-        } else {
-            for (let i = 0; i < num; i++) {
+        }
+        if (!bool) {
+            for (let i = 1; i <= arr[idx]; i++) {
                 answer.pop();
             }
         }
