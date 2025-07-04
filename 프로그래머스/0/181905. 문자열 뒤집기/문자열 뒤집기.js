@@ -1,7 +1,8 @@
 function solution(str, s, e) {
-    const first = str.slice(0, s);
-    const middle = [...str.slice(s, e + 1)].reverse().join('')
-    const after = str.slice(e + 1);
+    const arr = [...str];
     
-    return first + middle + after
+    const reversedStr = arr.slice(s, e + 1).reverse();
+    
+    arr.splice(s, e - s + 1, ...reversedStr);
+    return arr.join('')
 }
