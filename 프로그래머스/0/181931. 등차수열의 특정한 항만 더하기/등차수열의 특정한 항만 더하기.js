@@ -1,6 +1,3 @@
 function solution(a, d, included) {
-    const answer = included.reduce((acc, c, i) => {
-        return c ? acc + a + d * i : acc;
-    }, 0);
-    return answer;
+    return included.reduce((acc, cur, idx) => cur ? acc + a + d * idx : acc , 0)
 }
