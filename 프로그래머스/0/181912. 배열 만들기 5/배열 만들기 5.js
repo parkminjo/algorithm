@@ -1,3 +1,3 @@
-function solution(intStrs, k, s, l) {
-    return intStrs.map(int => Number(int.slice(s, s + l))).filter(int => int > k );
+function solution(intStrList, k, s, l) {
+    return intStrList.map(intStr => +intStr.slice(s, s + l)).filter(num => num > k)
 }
