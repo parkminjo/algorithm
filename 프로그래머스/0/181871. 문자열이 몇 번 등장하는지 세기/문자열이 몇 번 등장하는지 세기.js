@@ -1,11 +1,11 @@
 function solution(str, pat) {
     let count = 0;
-    let idx = str.indexOf(pat);
     
-    while (idx !== -1) {
-        count += 1;
-        idx = str.indexOf(pat, idx + 1)
-    }
+    [...str].forEach((char, idx) => {
+        if (char === pat[0] && str.slice(idx, idx + pat.length) === pat) {
+            count += 1;
+        }
+    })
     
     return count;
 }
