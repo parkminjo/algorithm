@@ -6,6 +6,6 @@ function solution(letter) {
     '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
     '-.--':'y','--..':'z'
     };
-
-    return letter.split(' ').map(item => morse[item]).join('');
+    
+    return letter.split(' ').reduce((prev, curr) => prev + morse[curr], '');
 }
