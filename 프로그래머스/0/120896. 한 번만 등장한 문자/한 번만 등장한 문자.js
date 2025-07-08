@@ -1,9 +1,9 @@
 function solution(s) {
-    const obj = {};
+    const arr = [];
     
-    for (const char of s.split('')) {
-        obj[char] = (obj[char] || 0) + 1;
+    for (const char of s) {
+        if (s.indexOf(char) === s.lastIndexOf(char)) arr.push(char);
     }
     
-    return Object.entries(obj).filter(([key, value]) => value === 1).map(([key, value]) => key).sort().join('') ?? '';
+    return arr.sort().join('');
 }
