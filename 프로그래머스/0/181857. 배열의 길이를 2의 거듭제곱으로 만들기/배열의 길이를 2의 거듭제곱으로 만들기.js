@@ -1,13 +1,11 @@
 function solution(arr) {
-    let length = arr.length;
-    let power = 1;
+    let num = 1;
     
-    while (power < length) {
-        power *= 2
+    while (arr.length > num) {
+        num *= 2;
     }
     
-    const zeroCount = power - length;
-    for (let i = 0; i < zeroCount; i++) {
+    while (arr.length !== num) {
         arr.push(0);
     }
     
