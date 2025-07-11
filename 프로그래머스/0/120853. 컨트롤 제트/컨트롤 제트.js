@@ -1,17 +1,10 @@
 function solution(s) {
-    const arr = s.split(' ');
-    
-    let sum = 0;
-    let prevNum = 0;
-    
-    arr.forEach(item => {
-        if (item !== 'Z') {
-            sum += Number(item);
-            prevNum = item;
-        } else {
-            sum -= Number(prevNum);
-        }
+    const stack = []
+
+    s.split(' ').forEach((target) => {
+        if (target === 'Z') stack.pop();
+        else stack.push(+target)
     })
-    
-    return sum;
+
+    return stack.length ? stack.reduce((pre, cur) => pre + cur) : 0;
 }
