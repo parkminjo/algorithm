@@ -1,19 +1,13 @@
 function solution(arr) {
-    let i = 0;
     const stk = [];
     
-    while (i < arr.length) {
-        if (stk.length === 0) {
-            stk.push(arr[i]);
-            i += 1;
-        } else if (stk[stk.length - 1] === arr[i]) {
+    arr.forEach((x,i)=>{
+        if( x !== stk[stk.length - 1]){
+            stk.push(x);
+        }else{
             stk.pop();
-            i += 1;
-        } else {
-            stk.push(arr[i]);
-            i += 1;
         }
-    }
-    
-    return stk.length !== 0 ? stk : [-1];
+    })
+
+    return stk.length === 0 ? [-1] : stk;
 }
