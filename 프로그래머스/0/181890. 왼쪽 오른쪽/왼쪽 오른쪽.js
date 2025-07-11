@@ -1,16 +1,8 @@
 function solution(strList) {
-  const leftIdx = strList.indexOf('l');
-  const rightIdx = strList.indexOf('r');
-
-  if (leftIdx === -1 && rightIdx === -1) {
+    for (let i = 0; i < strList.length; i++) {
+        if (strList[i] === 'l') return strList.slice(0, i);
+        if (strList[i] === 'r') return strList.slice(i + 1);
+    }
+    
     return [];
-  }
-
-  if (leftIdx !== -1 && (rightIdx === -1 || leftIdx < rightIdx)) {
-    return strList.slice(0, leftIdx);
-  }
-
-  if (rightIdx !== -1 && (leftIdx === -1 || rightIdx < leftIdx)) {
-    return strList.slice(rightIdx + 1);
-  }
 }
