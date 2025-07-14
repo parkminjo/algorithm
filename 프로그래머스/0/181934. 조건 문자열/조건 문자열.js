@@ -1,21 +1,12 @@
+const operations = {
+    '>=' : (n, m) => n >= m,
+    '<=' : (n, m) => n <= m,
+    '>!' : (n, m) => n > m,
+    '<!' : (n, m) => n < m,
+}
+
 function solution(ineq, eq, n, m) {
-    let result;
-    const op = ineq + eq;
-    
-    switch (op) {
-        case '>=':
-            result = n >= m;
-            break;
-        case '<=':
-            result = n <= m;
-            break;
-        case '>!':
-            result = n > m;
-            break;
-        case '<!':
-            result = n < m;
-            break;
-    }
-    
-    return Number(result);
+    const operate = operations[ineq + eq];
+    const result = Number(operate(n, m));
+    return result;
 }
