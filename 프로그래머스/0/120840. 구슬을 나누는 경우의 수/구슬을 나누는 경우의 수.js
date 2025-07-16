@@ -1,12 +1,7 @@
-function solution(balls, share) {
-    return factorial(balls) / (factorial(balls - share) * factorial(share));
+function factorial (n) {
+    return n === 0 ? 1 : n * factorial(n - 1);
 }
 
-function factorial(n) {
-    let result = 1n;
-    
-    for (let i = 1n; i <= BigInt(n); i++) {
-        result = result * i;
-    }
-    return result;
+function solution(balls, share) {
+  return Math.round(factorial(balls) / factorial(balls - share) / factorial(share))
 }
