@@ -1,12 +1,6 @@
 function solution(idPw, db) {
-    const [id, pw] = idPw
+    const [id, pw] = idPw;
+    const map = new Map(db);
     
-    for (const [dbId, dbPw] of db) {
-        if (dbId === id) {
-            if (dbPw === pw) return "login";
-            else return "wrong pw"
-        }
-    }
-    
-    return "fail";
+    return map.has(id) ? (map.get(id) === pw ? "login" : "wrong pw") : "fail";
 }
