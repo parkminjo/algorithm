@@ -1,19 +1,11 @@
 function solution(quiz) {
-    const answer = quiz.map(str => {
-        const [n1, op, n2, eq, result] = str.split(" ");
-        let sum = 0;
-        
-        switch (op) {
-            case '+':
-                sum = +n1 + +n2;
-                break;
-            case '-':
-                sum = +n1 - +n2;
-                break;
-        }
-        
-        return sum === +result ? "O" : "X";
-    });
+    const answer = [];
     
-    return answer;
+    return quiz.map(str => {
+        const [calc, result] = str.split(' = ');
+        const sign = calc.includes('+') ? 1 : -1
+        const [x, y] = calc.split(sign === 1 ? ' + ' : ' - ');
+
+        return +x + (+y * sign) === +result ? 'O' : 'X'
+    });
 }
