@@ -1,4 +1,6 @@
 function solution(num, total) {
-    const start = (total - num * (num - 1) / 2) / num;
-    return Array.from({ length: num}, (_, i) => start + i);
+    const min = Math.ceil(total / num - Math.floor(num / 2));
+    const max = Math.floor(total / num + Math.floor(num / 2));
+
+    return new Array(num).fill(0).map((_, i)=> i + min);
 }
