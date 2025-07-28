@@ -1,34 +1,21 @@
 function solution(a, b, c, d) {
-    const counts = {};
-    const arr = [a, b, c, d];
-    arr.forEach(num => {
-       counts[num] = (counts[num] || 0) + 1; 
-    })
-    
-    const entries = Object.entries(counts).map(([num, count]) => [Number(num), count])
-    entries.sort((a, b) => b[1] - a[1]);
-    
-    if (entries.length === 1) {
-        return 1111 * entries[0][0];
-    }
-    
-    if (entries.length === 2) {
-        const [p, count1] = entries[0];
-        const [q, count2] = entries[1];
-        
-        if (count1 === 3) {
-            return (10 * p + q)**2;
-        } else {
-            return (p + q) * Math.abs(p - q);
-        }
-    }
-    
-    if (entries.length === 3) {
-        const [_, q, r] = entries;
-        return q[0] * r[0];
-    }
-    
-    if (entries.length === 4) {
-        return Math.min(a, b, c, d);
-    }
+    if (a === b && a === c && a === d) return 1111 * a
+
+    if (a === b && a === c) return (10 * a + d) ** 2
+    if (a === b && a === d) return (10 * a + c) ** 2
+    if (a === c && a === d) return (10 * a + b) ** 2
+    if (b === c && b === d) return (10 * b + a) ** 2
+
+    if (a === b && c === d) return (a + c) * Math.abs(a - c)
+    if (a === c && b === d) return (a + b) * Math.abs(a - b)
+    if (a === d && b === c) return (a + b) * Math.abs(a - b)
+
+    if (a === b) return c * d
+    if (a === c) return b * d
+    if (a === d) return b * c
+    if (b === c) return a * d
+    if (b === d) return a * c
+    if (c === d) return a * b
+
+    return Math.min(a, b, c, d)
 }
