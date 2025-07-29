@@ -1,19 +1,11 @@
 function solution(lines) {
-    const map = new Map();
-    
-    for (const [start, end] of lines) {
-        for (let i = start; i < end; i++) {
-            map.set(i, (map.get(i) || 0) + 1);
-        }
-    }
-        
-    let overlapLength = 0;
-    for (const [_, count] of map.entries()) {
-        if (count >= 2) {
-            overlapLength++;
-        }
-    }
-    
-    return overlapLength;
-}
+    const line = new Array(200).fill(0);
 
+    lines.forEach(([start, end]) => {
+        for(; start < end; start++) {
+            line[start + 100]++;
+        }
+    });
+
+    return line.reduce((a, c) =>  c >= 2 ? a + 1 : a, 0)
+}
