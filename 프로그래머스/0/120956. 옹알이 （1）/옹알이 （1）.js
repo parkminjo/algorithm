@@ -1,10 +1,21 @@
 function solution(babbling) {
-    let answer = 0;
-    const regex = /^(aya|ye|woo|ma)+$/;
+    const wordSet = new Set(["aya", "ye", "woo", "ma"])
+    let result = 0;
 
-    babbling.forEach(word => {
-        if (regex.test(word)) answer++;  
-    })
-
-    return answer;
+    for(const word of babbling) {
+        let remainWord = '';
+        let prevWord = '';
+        
+        for (const char of word) {
+            remainWord += char;
+            if (wordSet.has(remainWord)) {
+                if (remainWord === prevWord) break;
+                prevWord = remainWord
+                remainWord = ''
+            }
+        }
+        
+        if (remainWord === '') result++
+    }
+    return result;
 }
