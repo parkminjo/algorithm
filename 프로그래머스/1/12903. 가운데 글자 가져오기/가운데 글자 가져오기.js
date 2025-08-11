@@ -1,7 +1,11 @@
-function solution(s) {
-    const odd = s[Math.floor(s.length/2)]
-    const even = s[s.length/2 - 1] + s[s.length/2]
+function solution(str) {
+    const length = str.length;
+    const center = str.length / 2;
     
-    const answer = s.length % 2 !== 0 ? odd : even;
-    return answer;
+    if (length % 2 === 0) {
+        return str.slice(center - 1, center + 1);
+    } else {
+        return str.slice(Math.floor(center), Math.floor(center) + 1);
+    }
 }
+
