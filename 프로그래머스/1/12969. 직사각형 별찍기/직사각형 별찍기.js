@@ -4,13 +4,9 @@ process.stdin.on('data', data => {
     const a = Number(n[0]);
     const b = Number(n[1]);
     
-    const arr = [];
-    
-    for (let i = 0; i < a; i++) {
-        arr.push('*');
-    }
+    const star = '*'.repeat(a);
     
     for (let i = 0; i < b; i++) {
-        console.log(arr.join(''));
+        console.log(star);
     }
 });
