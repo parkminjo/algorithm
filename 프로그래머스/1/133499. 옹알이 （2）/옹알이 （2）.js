@@ -1,31 +1,17 @@
 function solution(babbling) {
-    const validWords = ['aya', 'ye', 'woo', 'ma'];
-    let count = 0;
+    const babblableWords = ["aya", "ye", "woo", "ma"];
     
-    babbling.forEach(word => {
-        let prevWord = '';
-        let isValid = true;
-        
-        while (word.length > 0) {
-            let isFound = false;
-            
-            for (let sound of validWords) {
-                if (word.startsWith(sound) && prevWord !== sound) {
-                    word = word.slice(sound.length);
-                    prevWord = sound;
-                    isFound = true;
-                    break;
-                }
-            }
-            
-            if (!isFound) {
-                isValid = false;
-                break;
-            }
+    return babbling.reduce((count, babbl, idx) => {
+        for (let i = 0; i < babblableWords.length; i++) {
+            if (babbl.includes(babblableWords[i].repeat(2))) return count;
         }
         
-        if (isValid) count++;
-    })
-    
-    return count;
+        for (let i = 0; i < babblableWords.length; i++) {
+            babbl = babbl.split(babblableWords[i]).join(' ').trim();
+        }
+        
+        if (babbl) return count;
+        
+        return count += 1;
+    }, 0);
 }
